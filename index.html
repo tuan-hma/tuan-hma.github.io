@@ -1,39 +1,217 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>My first three.js app</title>
-		<style>
-			body { margin: 0; }
-		</style>
-	</head>
-	<body>
-		<script src="https://threejs.org/build/three.js"></script>
-		<script>
-			const scene = new THREE.Scene();
-			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-			const renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
-
-			const geometry = new THREE.BoxGeometry();
-			const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			const cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
-
-			camera.position.z = 5;
-
-			const animate = function () {
-				requestAnimationFrame( animate );
-
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
-
-				renderer.render( scene, camera );
-			};
-
-			animate();
-		</script>
-	</body>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Vietnam Summit in Japan 2021</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/cropped-favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CSulphur+Point:400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <header class="page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar_half-dark" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-lg-stick-up-offset="69px" data-xl-stick-up-offset="35px" data-xxl-stick-up-offset="35px" data-body-class="rd-navbar-static-smooth">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div class="rd-navbar-brand">
+                  <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo.png" alt="" width="205" height="35"/><img class="brand-logo-light" src="images/logo-inverse-205x35.svg" alt="" width="205" height="35"/></a>
+                </div>
+              </div>
+              <!-- RD Navbar Nav-->
+              <div class="rd-navbar-nav-wrap">
+                <div class="rd-navbar-nav-wrap__element">
+                  <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#booking">Get tickets</button> -->
+                </div>
+                <ul class="rd-navbar-nav">
+                  <li><a href="#about">Giới thiệu</a>
+                    <!--if (navbarTexts && typeof(item.subtitle) !== 'undefined')-->
+                    <!--  span.rd-navbar-subtitle=item.subtitle-->
+                  </li>
+                  <li><a href="#schedule">Lịch trình</a>
+                    <!--if (navbarTexts && typeof(item.subtitle) !== 'undefined')-->
+                    <!--  span.rd-navbar-subtitle=item.subtitle-->
+                  </li>
+                 
+                
+                  <li><a href="#our-partners">Về chúng tôi</a>
+                    <!--if (navbarTexts && typeof(item.subtitle) !== 'undefined')-->
+                    <!--  span.rd-navbar-subtitle=item.subtitle-->
+                  </li>
+                 
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section class="section overflow-hidden context-dark">
+        <div class="fluid-container">
+          <div class="bg-img-box">
+            <div class="bg-img bg-image bg-img-overlay" style="">
+              <ul class="scene">
+                <li class="layer" data-depth="0.20"><img src="images/effect-bg.png" style="object-position: 0% 0%;" alt=""></li>
+                <!-- <li class="layer" data-depth="0.30"><img src="images/cover-background.png" alt=""></li> -->
+                <!-- <li class="layer" data-depth="0.40"><img src="images/lp-cover.png" alt=""></li> -->
+              </ul>
+            </div>
+            <div class="row mt-0">
+              <div class="col-12">
+                <img class="fg-image" style="top: 0px; margin-top: 0px" src="images/cover-background.png"/>
+                <img class="fg-image mobile" style="top: 0px; margin-top: 0px" src="images/mobile-cover.png"/>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      <section class="section section-xxl bg-default" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-9 offset-xl-2">
+              <h2 class="h3">Giới thiệu</h2>
+              <p class="small">Đại dịch COVID-19 đang đặt ra vô vàn thách thức cho tất cả các nước trên toàn thế giới,  khiến cho nhiều liên kết bị yếu đi, có nhiều liên kết bị đứt gãy hoàn toàn, nhưng cũng mở ra nhiều cách liên kết mới chưa từng có. Đối mặt với tốc độ lây lan nhanh và nguy hiểm của dịch, song song cùng các biện pháp chống dịch của Chính phủ các quốc gia, các nhà nghiên cứu, các nhà làm chính sách, và người làm kinh doanh cũng đang nỗ lực để tìm ra nhiều giải pháp mới nhằm ngăn chặn dịch bệnh, ổn định xã hội, và phát triển hướng đi mới. 
+                <br><br>
+                Trong bối cảnh đó, cộng đồng trí thức Việt Nam tại Nhật Bản hy vọng xây dựng và duy trì được không gian chung có đủ các đại diện trí thức để chia sẻ, thảo luận, kết nối để phục hồi nhưng liên kết đã mất, bồi đắp những liên kết bị làm yếu, và tìm kiếm những liên kết mới trong bối cảnh hậu COVID-19. Đồng thời hướng đến việc tiếp tục tạo cơ hội để trí thức Việt Nam tại Nhật tiếp cận và suy nghĩ về những cơ hội đóng góp khả năng của mình cho Việt Nam từ đó tạo tiền đề cho hội trí thức Việt tại Nhật kết nối với các cơ quan, đơn vị, công ty trong nước, qua đó thúc đẩy hợp tác và triển khai các dự án cụ thể.
+                <br><br>
+                Với tinh thần gắn kết mạnh mẽ nói trên, Diễn đàn Trí thức Việt Nam tại Nhật Bản lần thứ nhất đã diễn ra vào tháng 11 năm 2019 tại Tokyo với những thành quả vượt trên mong đợi: gần 900 người tham dự, trong đó bao gồm 53 diễn giả và 100 khách mời là đại diện các Cơ quan bộ ngành của Chính phủ cùng các nhà nghiên cứu và chuyên gia người Việt hàng đầu trong và ngoài nước Nhật. Đó là những con số biết nói, đã khẳng định tầm vóc và độ ảnh hưởng của sự kiện có quy mô lớn nhất từ trước tới nay của cộng đồng trí thức người Việt Nam tại Nhật Bản.
+                <br><br>
+                Tiếp nối thành công của chương trình lần thứ nhất, Diễn đàn Trí thức Việt Nam tại Nhật Bản lần thứ 2 tiếp tục được tổ chức dưới hình thức trực tuyến thông qua nền tảng Zoom và livestream vào ngày 20-21/11/2021. Diễn đàn Trí thức Việt Nam tại Nhật Bản 2021 sẽ có chủ đề chung là  “Chuyển mình: Giá trị mới - cách thức mới”. Với chủ đề này, diễn đàn mong muốn là một cầu nối để kết nối và quy tụ cộng đồng trí thức Việt tại Nhật, cùng chia sẻ và thảo luận về thời cơ cũng như vấn đề Việt Nam hiện đang phải đối mặt sau đại dịch COVID-19 và đề xuất giải pháp. </p>
+              <!-- <button class="btn btn-xl btn-primary" data-toggle="modal" data-target="#booking">Đăng ký ngay</button> -->
+            </div>
+            <div class="col-xl-9 offset-xl-2 mt-5">
+              <h2 class="h3">Về Vietnam Summit</h2>
+              <p class="small">Nhật Bản hiện là một trong những điểm đến hấp dẫn của thanh niên Việt Nam nói riêng và người Việt nói chung trong bối cảnh toàn cầu hoá và sự thiếu hụt nhân lực của quốc gia này. Theo thống kê của Bộ Tư pháp Nhật Bản, có gần 500 nghìn người Việt Nam đang sinh sống, học tập và làm việc tại Nhật trong đó ước tính hơn một nửa thuộc thành phần trí thức bao gồm các nhà khoa học, nhà nghiên cứu tại các trường đại học, viện nghiên cứu, các chuyên gia tại các công ty hàng đầu ở Nhật cũng như những doanh nhân khởi nghiệp trên nhiều lĩnh vực.
+                <br><br>
+                Trong bối cảnh đó, cộng đồng trí thức người Việt tại Nhật đã hình thành nhiều tổ chức độc lập, tiêu biểu như Mạng lưới Học thuật người Việt Nam tại Nhật (VANJ), Cộng đồng Chuyên gia người Việt Nam tại Nhật Bản (VPJ) và Hội Thanh niên Sinh viên Việt Nam tại Nhật Bản (VYSA). Sự phát triển này đặt ra nhu cầu lớn về một diễn đàn chung của cộng đồng trí thức Việt Nam tại Nhật Bản, với vai trò kết nối và quy tụ nguồn tri thức dồi dào của các chuyên gia, nhà khoa học, các nhà hoạch định chính sách và các doanh nghiệp, từ đó đi tìm câu trả lời cho bài toán xây dựng, phát triển cộng đồng Việt Nam tại Nhật Bản nói riêng và đất nước Việt Nam nói chung. Động lực tạo ra một điểm đến như vậy đã thúc đẩy 3 tổ chức (VANJ, VPJ, VYSA) cùng xây dựng chuỗi chương trình Diễn đàn Trí thức Việt Nam tại Nhật Bản (tên tiếng Anh: Vietnam Summit in Japan).
+                <br><br>
+                Vào tháng 11 năm 2019, Diễn đàn Trí thức Việt Nam tại Nhật Bản 2019 đã chính thức diễn ra tại Tokyo. Diễn đàn đã chào đón sự tham gia góp mặt của của các cơ quan bộ ngành trong nước, đại sứ quán Việt Nam tại Nhật Bản, các công ty Việt Nam tại Nhật Bản, các diễn giả khách mời là những chuyên gia uy tín từ nhiều lĩnh vực nghiên cứu và kinh doanh khác nhau. Với 10 phiên thảo luận chuyên sâu, hơn 60 diễn giả, và hơn 900 người tham gia, Diễn đàn Trí thức Việt Nam tại Nhật Bản 2019 đã trở thành một không gian chung để người Việt Nam tại Nhật Bản nói chung và trí thức Việt Nam tại Nhật Bản nói riêng có thể chia sẻ, thảo luận, và cùng tìm giải pháp cho những vấn đề cấp thiết trong việc xây dựng và phát triển đất nước.
+                 </p>
+              <!-- <button class="btn btn-xl btn-primary" data-toggle="modal" data-target="#booking">Đăng ký ngay</button> -->
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="section overflow-hidden context-dark" id="schedule">
+        <div class="container">
+          <div class="bg-img-box section-xxl">
+            <div class="bg-img bg-image bg-img-overlay" style="background-image: url('https://ld-wt73.template-help.com/tf/apoint/images/schedule-bg.jpg')"></div>
+            <div class="row row-xl-75 mt-0">
+              <div class="col-xl-8 offset-xl-2">
+                <h2 class="h3">Lịch trình sự kiện</h2>
+                <p>Sự kiện sẽ được diễn ra online trong 2 ngày <br> 20-21/11/2021.</p>
+              </div>
+              <!--Tabs #2-->
+             
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!--Our partners-->
+      <section class="section section-xxl bg-default" id="our-partners">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-8 offset-xl-2">
+              <h2 class="h4">Thành phần ban tổ chức</h2>
+              <p>Hội trí thức Việt Nam tại Nhật Bản</p>
+              <p>Mạng lưới học thuật người Việt Nam tại Nhật Bản (VANJ)</p>
+              <p>Cộng đồng chuyên gia tại Nhật Bản (VPJ)</p>
+              <p>Hội Thanh niên Sinh viên Việt Nam tại Nhật Bản (VYSA)</p>
+              <p>Mạng lưới đổi mới sáng tạo Việt - Nhật (VJOIN)</p>
+            </div>
+            <div class="col-xl-8 offset-xl-2 mt-5">
+              <div class="row row-30 row-xl-50">
+                <div class="col-6 col-lg-2 text-center text-lg-left"><img style="padding: 10px;" src="images/hoiTT-circle.jpeg" alt="" width="160" height="80"/>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-left"><img src="images/VANJ_circle-01.png" alt="" width="160" height="80"/>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-left"><img src="images/VPJ Circle.png" alt="" width="160" height="80"/>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-left"><img style="padding: 5px;"  src="images/VSCA logo.png" alt="" width="160" height="80"/>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-left"><img style="padding: 13px;" src="images/vjoin_logo_2.png" alt="" width="160" height="80"/>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-8 offset-xl-2 mt-5">
+              <h2 class="h4">Đơn vị bảo trợ</h2>
+              <p>Đại sứ quán Việt Nam tại Nhật Bản</p>
+              <p>Mạng lưới đổi mới sáng tạo quốc gia (NIC)</p>
+            </div>
+            <div class="col-xl-8 offset-xl-2 mt-5">
+              <div class="row row-30 row-xl-50">
+                <div class="col-md-6 col-lg-2 text-center text-lg-left"><img src="images/QH.png" alt="" width="160" height="80"/>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="section footer-classic">
+        <div class="container">
+          <div class="row justify-content-center justify-content-md-between section-xl pt-0">
+            <div class="col-xl-6 offset-xl-2">
+              <h2 class="h3">Liên hệ</h2>
+              <div class="h5 mb-xl-4 middle text-primary">organizers@vietnamsummit.org</div><a class="fab fa-facebook-square" href="https://www.facebook.com/vietnam.summit.in.japan" style="color:#1976d2; font-size: 50px;"></a>
+            </div>
+          </div>
+          <div class="row justify-content-center justify-content-md-between">
+            <div class="col-xl-10 offset-xl-2">
+              <hr>
+              <div class="row mt-0 section-xl">
+                <div class="col-md-3 text-center text-sm-left">
+                  <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo.png" alt="" width="205" height="35"/><img class="brand-logo-light" src="images/logo-inverse-205x35.svg" alt="" width="205" height="35"/></a>
+                </div>
+                <div class="col-md-9 d-flex justify-content-md-end align-items-end flex-wrap">
+                  <!-- <p class="rights"><span>&copy;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved</span></p> -->
+                  <!-- <p class="rights">Email: organizers@vietnamsummit.org</p> -->
+                  <ul class="footer-list-icon">
+                    <!-- <li><a class="icon icomoon icomoon-twitter" href="#"></a></li> -->
+                    <!-- <li><a class="fab fa-facebook-square" href="https://www.facebook.com/vietnam.summit.in.japan" style="color:#1976d2; font-size: 50px;"></a></li> -->
+                    <li><a class="icon bottom-icon" href="#"><img src="images/QH.png"/></a></li>
+                    <li><a style="max-width: 40px;" class="icon bottom-icon" href="#"><img src="images/hoiTT-circle.jpeg"/></a></li>
+                    <li><a class="icon bottom-icon" href="#"><img src="images/VANJ_circle-01.png"/></a></li>
+                    <li><a class="icon bottom-icon" href="#"><img src="images/VPJ Circle.png"/></a></li>
+                    <li><a style="max-width: 45px;" class="icon bottom-icon" href="#"><img src="images/VSCA logo.png"/></a></li>
+                    <li><a style="max-width: 45px;" class="icon bottom-icon" href="#"><img src="images/vjoin_logo.png"/></a></li>
+                    <!-- <li><a class="icon icomoon icomoon-youtube" href="#"></a></li>
+                    <li><a class="icon icomoon icomoon-pinterest" href="#"></a></li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <style>
+      .bottom-icon {
+        max-width: 50px;
+      }
+    </style>
+  </body>
 </html>
