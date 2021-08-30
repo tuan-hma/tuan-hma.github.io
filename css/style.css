@@ -1317,6 +1317,7 @@ html [class*='section-'].section-bottom-0 {
 
 .fg-image {
   display: none;
+  width: 100%;
 }
 
 @media (min-width: 1200px) {
@@ -1562,13 +1563,13 @@ h4,
 h5,
 .h5 {
 	font-size: 24px;
-	line-height: 1;
+	line-height: 1.2;
 }
 
 h6,
 .h6 {
 	font-size: 20px;
-	line-height: 1;
+	line-height: 1.2;
 }
 
 small,
