@@ -8224,6 +8224,7 @@ html.rd-navbar-fixed-linked .page {
 	border: none;
 	padding: 0;
 	font: inherit;
+  top: -10px;
 }
 
 .owl-carousel.owl-loaded {
@@ -8830,7 +8831,7 @@ html .dtp .invisible {
 }
 
 /* cheat position */
-.owl-nav {
+/* .owl-nav {
   position: relative;
   top: -565px;
-}
+} */
