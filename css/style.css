@@ -8172,7 +8172,7 @@ html.rd-navbar-fixed-linked .page {
 
 .owl-carousel .owl-stage-outer {
 	position: relative;
-	overflow: hidden;
+	/* overflow: hidden; */
 	/* fix for flashing background */
 	-webkit-transform: translate3d(-15px, 0px, 0px);
 	transform: translate3d(-15px, 0px, 0px);
