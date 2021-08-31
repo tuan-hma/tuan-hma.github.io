@@ -8828,3 +8828,9 @@ html .dtp .invisible {
   margin-bottom: 10px;
   display: block;
 }
+
+/* cheat position */
+.owl-nav {
+  position: relative;
+  top: -565px;
+}
