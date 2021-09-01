@@ -1623,7 +1623,7 @@ code {
 }
 
 p {
-	letter-spacing: .1em;
+	/* letter-spacing: .1em; */
 	font-size: 19.2px;
 }
 
