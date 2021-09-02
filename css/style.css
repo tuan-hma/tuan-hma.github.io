@@ -8799,7 +8799,9 @@ html .dtp .invisible {
 }
 
 .item.session-item {
-  background: #4285f4;
+  background: url('/images/background_no_object.jpg');
+  background-position: center;
+  background-color: #4285f4;
   padding: 20px;
   border-radius: 20px;
   line-height: 1.4;
@@ -8835,3 +8837,12 @@ html .dtp .invisible {
   position: relative;
   top: -565px;
 } */
+
+#our-partners img {
+  max-width: 80px;
+}
+
+.sponsor-group {
+  display: flex;
+  align-items: center;
+}
