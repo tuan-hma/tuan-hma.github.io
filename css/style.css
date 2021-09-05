@@ -8866,5 +8866,6 @@ html .dtp .invisible {
 }
 
 .session-list li span{
-  font-weight: 500;
+  font-weight: 400;
+  display: block;
 }
