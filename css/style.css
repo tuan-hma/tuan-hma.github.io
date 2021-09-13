@@ -8873,3 +8873,31 @@ html .dtp .invisible {
 footer .brand img{
   max-height: 60px;
 }
+
+#exihibition img {
+  padding: 20%;
+}
+
+#exihibition h6,#exihibition h5,#exihibition p {
+  color: #151515;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#exihibition .card {
+  padding-bottom: 20px;
+}
+
+#exihibition .card:hover {
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+  transition: .8s ease;
+}
+
+#exihibition .brand-item {
+  margin-bottom: 20px;
+}
+
+#exihibition .brand-item .card {
+  cursor: pointer;
+}
+
