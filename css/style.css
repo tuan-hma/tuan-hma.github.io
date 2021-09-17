@@ -8877,6 +8877,7 @@ footer .brand img{
 
 #exihibition img {
   padding: 20%;
+  object-fit: contain;
 }
 
 #exihibition h6,#exihibition h5,#exihibition p {
