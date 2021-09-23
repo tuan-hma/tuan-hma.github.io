@@ -21,12 +21,6 @@
 
 		<div id="container"></div>
 
-		<div id="info">
-			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> webgl - animation - keyframes<br/>
-			Model: <a href="https://www.artstation.com/artwork/1AGwX" target="_blank" rel="noopener">Littlest Tokyo</a> by
-			<a href="https://www.artstation.com/glenatron" target="_blank" rel="noopener">Glen Fox</a>, CC Attribution.
-		</div>
-
 		<script type="module">
 
 			import * as THREE from './build/three.module.js';
@@ -44,8 +38,8 @@
 			const clock = new THREE.Clock();
 			const container = document.getElementById( 'container' );
 
-			const stats = new Stats();
-			container.appendChild( stats.dom );
+			// const stats = new Stats();
+			// container.appendChild( stats.dom );
 
 			const renderer = new THREE.WebGLRenderer( { antialias: true } );
 			renderer.setPixelRatio( window.devicePixelRatio );
@@ -56,7 +50,7 @@
 			const pmremGenerator = new THREE.PMREMGenerator( renderer );
 
 			const scene = new THREE.Scene();
-			scene.background = new THREE.Color( 0xbfe3dd );
+			scene.background = new THREE.Color( 0xe2e2e2 );
 			scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
 			const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 100 );
@@ -73,15 +67,15 @@
 
 			const loader = new GLTFLoader();
 			loader.setDRACOLoader( dracoLoader );
-			loader.load( 'models/gltf/LittlestTokyo.glb', function ( gltf ) {
+			loader.load( 'models/GH2/gianhang2.gltf', function ( gltf ) {
 
 				const model = gltf.scene;
-				model.position.set( 1, 1, 0 );
-				model.scale.set( 0.01, 0.01, 0.01 );
+				model.position.set( 0, -1, 0 );
+				//model.scale.set( 0.01, 0.01, 0.01 );
 				scene.add( model );
 
-				mixer = new THREE.AnimationMixer( model );
-				mixer.clipAction( gltf.animations[ 0 ] ).play();
+				//mixer = new THREE.AnimationMixer( model );
+				//mixer.clipAction( gltf.animations[ 0 ] ).play();
 
 				animate();
 
@@ -106,13 +100,13 @@
 
 				requestAnimationFrame( animate );
 
-				const delta = clock.getDelta();
+				//const delta = clock.getDelta();
 
-				mixer.update( delta );
+				// mixer.update( delta );
 
-				controls.update();
+				//controls.update();
 
-				stats.update();
+				//stats.update();
 
 				renderer.render( scene, camera );
 
