@@ -5,7 +5,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CSulphur+Point:400,700">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -16,8 +20,12 @@
 			}
 
 			a {
-				color: #2983ff;
+				color: #1ab48b;
 			}
+
+      .modal .modal-content {
+        border-radius: 20px;
+      }
 		</style>
 	</head>
 
@@ -29,7 +37,8 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Chi tiết banner</h5>
+            <h5 class="modal-title">Thông tin</h5>
+            <a href="/images/sample_flyer.png" type="button" class="fa fa-download ml-2" download=""></a>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -37,9 +46,6 @@
           <div class="modal-body">
             <img style="width: 100%;" src="/images/sample_flyer.png">
           </div>
-          <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div> -->
         </div>
       </div>
     </div>
