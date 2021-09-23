@@ -5,6 +5,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 		<style>
 			body {
 				background-color: #bfe3dd;
@@ -20,6 +24,26 @@
 	<body>
 
 		<div id="container"></div>
+
+    <div class="modal banner-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Chi tiết banner</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img style="width: 100%;" src="/images/sample_flyer.png">
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    
 
 		<script type="module">
 
@@ -46,6 +70,8 @@
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			renderer.outputEncoding = THREE.sRGBEncoding;
 			container.appendChild( renderer.domElement );
+
+      renderer.domElement.addEventListener('click', onClick, false);
 
 			const pmremGenerator = new THREE.PMREMGenerator( renderer );
 
@@ -111,10 +137,37 @@
 				renderer.render( scene, camera );
 
 			}
+      var raycaster = new THREE.Raycaster();
+      var mouse = new THREE.Vector2()
 
+      function onClick( event ) {
+        console.log('dmm click goi nha')
+        event.preventDefault();
+
+        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+        raycaster.setFromCamera( mouse, camera );
+
+        var intersects = raycaster.intersectObjects( scene.children, true );
+
+        if ( intersects.length > 0 ) {
+          // console.log( 'Intersection:', intersects[ 0 ] );
+          var clickedOn = intersects[0]
+          console.log(`clicked on: ${clickedOn.object.name} - index: ${clickedOn.faceIndex}`)
+          console.log(clickedOn)
+          if (clickedOn.object.name === "model_map_poster_lightbox_mtl_50_StaticMeshComponent0") {
+            console.log('hell yeah')
+            $('.banner-modal').modal({
+              keyboard: false
+            })
+          } else {
+            console.log('booo booo')
+          }
+        }
+      }
 
 		</script>
-
 	</body>
 
 </html>
