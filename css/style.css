@@ -8917,3 +8917,17 @@ footer .brand img{
 .btn-regist:hover {
   color: #fff;
 }
+
+.session-list a {
+  text-decoration: underline;
+}
+
+.fb-share {
+  color: white;
+  background: #1976d2;
+  border-radius: 5px;
+  border: none;
+}
+.fb-share:hover {
+  color: white;
+}
