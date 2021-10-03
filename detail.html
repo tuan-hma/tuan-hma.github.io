@@ -1,180 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>three.js webgl - animation - keyframes</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="main.css">
-    <link rel="stylesheet" type="text/css"
+
+<head>
+  <title>three.js webgl - animation - keyframes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="main.css">
+  <link rel="stylesheet" type="text/css"
     href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CSulphur+Point:400,700">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-		<style>
-			body {
-				background-color: #bfe3dd;
-				color: #000;
-			}
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #bfe3dd;
+      color: #000;
+    }
 
-			a {
-				color: #1ab48b;
-        -webkit-appearance: none!important;
-			}
+    a {
+      color: #1ab48b;
+      -webkit-appearance: none !important;
+    }
 
-      .modal .modal-content {
-        border-radius: 20px;
+    .modal .modal-content {
+      border-radius: 20px;
+    }
+
+    #loading-screen {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      opacity: 1;
+      transition: 1s opacity;
+    }
+
+    #loading-screen.fade-out {
+      display: none;
+    }
+
+    #loader {
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #9370DB;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    #loader:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #BA55D3;
+      -webkit-animation: spin 3s linear infinite;
+      animation: spin 3s linear infinite;
+    }
+
+    #loader:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #FF00FF;
+      -webkit-animation: spin 1.5s linear infinite;
+      animation: spin 1.5s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
       }
-		</style>
-	</head>
 
-	<body>
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
 
-		<div id="container"></div>
+    @keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
 
-    <div class="modal banner-modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Thông tin</h5>
-            <a href="/images/sample_flyer.png" type="button" class="fa fa-download ml-2" download=""></a>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img style="width: 100%;" src="/images/sample_flyer.png">
-          </div>
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .hint {
+      position: fixed;
+      z-index: 1;
+      background: #fff;
+      top: 10px;
+      left: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      color: #525252;
+      font-size: 17px;
+      }
+  </style>
+</head>
+
+<body>
+  <section id="loading-screen">
+
+    <div id="loader"></div>
+
+  </section>
+  <div id="container"></div>
+
+  <div class="hint">
+    <span>Gợi ý: Click vào các banner để xem và tải về</span>
+  </div>
+
+  <div class="modal banner-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Thông tin</h5>
+          <a href="/images/sample_flyer.png" type="button" class="fa fa-download ml-2" download=""></a>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="width: 100%;" src="/images/sample_flyer.png">
         </div>
       </div>
     </div>
-    
-
-		<script type="module">
-
-			import * as THREE from './build/three.module.js';
-
-			import Stats from './jsm/libs/stats.module.js';
-
-			import { OrbitControls } from './jsm/controls/OrbitControls.js';
-			import { RoomEnvironment } from './jsm/environments/RoomEnvironment.js';
-
-			import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
-			import { DRACOLoader } from './jsm/loaders/DRACOLoader.js';
-
-			let mixer;
-
-			const clock = new THREE.Clock();
-			const container = document.getElementById( 'container' );
-
-			// const stats = new Stats();
-			// container.appendChild( stats.dom );
-
-			const renderer = new THREE.WebGLRenderer( { antialias: true } );
-			renderer.setPixelRatio( window.devicePixelRatio );
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			renderer.outputEncoding = THREE.sRGBEncoding;
-			container.appendChild( renderer.domElement );
-
-      renderer.domElement.addEventListener('click', onClick, false);
-
-			const pmremGenerator = new THREE.PMREMGenerator( renderer );
-
-			const scene = new THREE.Scene();
-			scene.background = new THREE.Color( 0xe2e2e2 );
-			scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
-
-			const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 100 );
-			camera.position.set( 5, 2, 8 );
-
-			const controls = new OrbitControls( camera, renderer.domElement );
-			controls.target.set( 0, 0.5, 0 );
-			controls.update();
-			controls.enablePan = false;
-			controls.enableDamping = true;
-
-			const dracoLoader = new DRACOLoader();
-			dracoLoader.setDecoderPath( 'js/libs/draco/gltf/' );
-
-			const loader = new GLTFLoader();
-			loader.setDRACOLoader( dracoLoader );
-			loader.load( 'models/GH2/gianhang2.gltf', function ( gltf ) {
-
-				const model = gltf.scene;
-				model.position.set( 0, -1, 0 );
-				//model.scale.set( 0.01, 0.01, 0.01 );
-				scene.add( model );
-
-				//mixer = new THREE.AnimationMixer( model );
-				//mixer.clipAction( gltf.animations[ 0 ] ).play();
-
-				animate();
-
-			}, undefined, function ( e ) {
-
-				console.error( e );
-
-			} );
+  </div>
 
 
-			window.onresize = function () {
+  <script type="module">
 
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
+    import * as THREE from './build/three.module.js';
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+    import Stats from './jsm/libs/stats.module.js';
 
-			};
+    import {OrbitControls} from './jsm/controls/OrbitControls.js';
+    import {RoomEnvironment} from './jsm/environments/RoomEnvironment.js';
+
+    import {GLTFLoader} from './jsm/loaders/GLTFLoader.js';
+    import {DRACOLoader} from './jsm/loaders/DRACOLoader.js';
+
+    let mixer;
+
+    const clock = new THREE.Clock();
+    const container = document.getElementById('container');
+
+    // const stats = new Stats();
+    // container.appendChild( stats.dom );
+
+    const renderer = new THREE.WebGLRenderer({antialias: true});
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    container.appendChild(renderer.domElement);
+
+    renderer.domElement.addEventListener('click', onClick, false);
+
+    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xe2e2e2);
+    scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
+
+    const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 100);
+    camera.position.set(5, 2, 8);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(0, 0.5, 0);
+    controls.update();
+    controls.enablePan = false;
+    controls.enableDamping = true;
+
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath('js/libs/draco/gltf/');
+
+    const loader = new GLTFLoader();
+    loader.setDRACOLoader(dracoLoader);
+    loader.load('models/GH2/gianhang2_nobrand.gltf', function (gltf) {
+
+      const model = gltf.scene;
+      model.position.set(0, -1, 0);
+      // model.rotation.set( new THREE.Euler( 0, 0, 0, 'XYZ' ))
+      //model.scale.set( 0.01, 0.01, 0.01 );
+      scene.add(model);
+
+      const loadingScreen = document.getElementById( 'loading-screen' );
+		  loadingScreen.classList.add( 'fade-out' );
+      // loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
+
+      //mixer = new THREE.AnimationMixer( model );
+      //mixer.clipAction( gltf.animations[ 0 ] ).play();
+
+      animate();
+
+    }, undefined, function (e) {
+
+      console.error(e);
+
+    });
 
 
-			function animate() {
+    window.onresize = function () {
 
-				requestAnimationFrame( animate );
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
 
-				//const delta = clock.getDelta();
+      renderer.setSize(window.innerWidth, window.innerHeight);
 
-				// mixer.update( delta );
+    };
 
-				//controls.update();
 
-				//stats.update();
+    function animate() {
 
-				renderer.render( scene, camera );
+      requestAnimationFrame(animate);
 
-			}
-      var raycaster = new THREE.Raycaster();
-      var mouse = new THREE.Vector2()
+      //const delta = clock.getDelta();
 
-      function onClick( event ) {
-        console.log('dmm click goi nha')
-        event.preventDefault();
+      // mixer.update( delta );
 
-        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-        mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+      //controls.update();
 
-        raycaster.setFromCamera( mouse, camera );
+      //stats.update();
 
-        var intersects = raycaster.intersectObjects( scene.children, true );
+      renderer.render(scene, camera);
 
-        if ( intersects.length > 0 ) {
-          // console.log( 'Intersection:', intersects[ 0 ] );
-          var clickedOn = intersects[0]
-          console.log(`clicked on: ${clickedOn.object.name} - index: ${clickedOn.faceIndex}`)
-          console.log(clickedOn)
-          if (clickedOn.object.name === "model_map_poster_lightbox_mtl_50_StaticMeshComponent0") {
-            console.log('hell yeah')
-            $('.banner-modal').modal({
-              keyboard: false
-            })
-          } else {
-            console.log('booo booo')
-          }
+    }
+    var raycaster = new THREE.Raycaster();
+    var mouse = new THREE.Vector2()
+
+    function onClick(event) {
+      console.log('dmm click goi nha')
+      event.preventDefault();
+
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+
+      var intersects = raycaster.intersectObjects(scene.children, true);
+
+      if (intersects.length > 0) {
+        // console.log( 'Intersection:', intersects[ 0 ] );
+        var clickedOn = intersects[0]
+        console.log(`clicked on: ${clickedOn.object.name} - index: ${clickedOn.faceIndex}`)
+        console.log(clickedOn)
+        if (clickedOn.object.name === "model_map_poster_lightbox_mtl_50_StaticMeshComponent0") {
+          console.log('hell yeah')
+          $('.banner-modal').modal({
+            keyboard: false
+          })
+        } else {
+          console.log('booo booo')
         }
       }
+    }
 
-		</script>
-	</body>
+  </script>
+</body>
 
 </html>
