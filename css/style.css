@@ -8903,3 +8903,17 @@ footer .brand img{
   cursor: pointer;
 }
 
+.btn-regist {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  background: #f24738;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0.1rem 1rem rgb(147 0 0 / 45%) !important;
+}
+
+.btn-regist:hover {
+  color: #fff;
+}
