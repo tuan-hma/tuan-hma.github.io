@@ -8918,7 +8918,7 @@ footer .brand img{
   color: #fff;
 }
 
-.session-list a {
+.session-list a, .event-wrap a {
   text-decoration: underline;
 }
 
@@ -8930,4 +8930,8 @@ footer .brand img{
 }
 .fb-share:hover {
   color: white;
+}
+
+#schedule .time {
+  margin-top: 10px;
 }
