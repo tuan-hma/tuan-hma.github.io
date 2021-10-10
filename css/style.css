@@ -8939,3 +8939,15 @@ footer .brand img{
 #speaker > a.small {
   padding-left: 50px;
 }
+
+#speaker > .container > div.small {
+  margin-top: 40px;
+}
+
+#speaker > .container > img {
+  max-height: 500px;
+}
+
+#speaker h4 {
+  line-height: 1.3;
+}
