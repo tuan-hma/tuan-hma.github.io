@@ -8935,3 +8935,7 @@ footer .brand img{
 #schedule .time {
   margin-top: 10px;
 }
+
+#speaker > a.small {
+  padding-left: 50px;
+}
