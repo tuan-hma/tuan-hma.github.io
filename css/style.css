@@ -8880,6 +8880,13 @@ footer .brand img{
   object-fit: contain;
 }
 
+#exihibition.speaker-list img {
+  padding: 0%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  height: 250px;
+}
+
 #exihibition h6,#exihibition h5,#exihibition p {
   color: #151515;
   margin-left: 20px;
