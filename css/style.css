@@ -1556,19 +1556,19 @@ h4,
 @media (min-width: 768px) {
 	h4,
 	.h4 {
-		font-size: 36px;
+		font-size: 30px;
 	}
 }
 
 h5,
 .h5 {
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 1.2;
 }
 
 h6,
 .h6 {
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 1.2;
 }
 
@@ -1581,7 +1581,7 @@ small,
 
 .middle {
 	display: block;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.5;
 }
 
