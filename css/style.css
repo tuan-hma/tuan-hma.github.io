@@ -8908,6 +8908,8 @@ footer .brand img{
 
 #exihibition .brand-item .card {
   cursor: pointer;
+  max-width: 270px;
+  margin: auto;
 }
 
 .btn-regist {
