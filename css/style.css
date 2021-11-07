@@ -8921,9 +8921,24 @@ footer .brand img{
   border: none;
   border-radius: 5px;
   box-shadow: 0 0.1rem 1rem rgb(147 0 0 / 45%) !important;
+  animation: shake-animation 4.72s ease infinite;
+  transform-origin: 50% 50%;
+  z-index: 99;
 }
 
-.btn-regist:hover {
+@media (min-width: 786px) {
+  .btn-regist {
+		left: 40px;
+    bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 14pt;
+    padding-top: 15px;
+    padding-bottom: 15px;
+	}
+}
+
+.btn-regist:hover, .btn-regist:focus, .btn-regist:active {
   color: #fff;
 }
 
@@ -8959,4 +8974,15 @@ footer .brand img{
 
 #speaker h4 {
   line-height: 1.3;
+}
+
+@keyframes shake-animation {
+  0% { transform:translate(0,0) }
+ 1.78571% { transform:translate(5px,0) }
+ 3.57143% { transform:translate(0,0) }
+ 5.35714% { transform:translate(5px,0) }
+ 7.14286% { transform:translate(0,0) }
+ 8.92857% { transform:translate(5px,0) }
+ 10.71429% { transform:translate(0,0) }
+ 100% { transform:translate(0,0) }
 }

@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
 
   <style>
     .ie-panel {
@@ -107,23 +111,100 @@
     </header>
     <section class="section overflow-hidden context-dark">
       <div class="fluid-container">
-        <div class="bg-img-box">
-          <div class="bg-img bg-image bg-img-overlay" style="">
-            <ul class="scene">
-              <!-- <li class="layer" data-depth="0.20"><img src="images/effect-bg.png" style="object-position: 0% 0%;" alt=""></li> -->
-              <!-- <li class="layer" data-depth="0.30"><img src="images/cover-background.png" alt=""></li> -->
-              <!-- <li class="layer" data-depth="0.40"><img src="images/lp-cover.png" alt=""></li> -->
-            </ul>
-          </div>
-          <div class="row mt-0">
-            <div class="col-12">
-              <img class="fg-image" style="top: 0px; margin-top: 0px" src="images/cover_background_vie.jpg" />
-              <img class="fg-image mobile" style="top: 0px; margin-top: 0px" src="images/cover_background_vie.jpg" />
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/cover_background_vie.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/poster-phien-toan-the.jpeg" />
+            </div>
+            <div class="swiper-slide">
+              <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+              <img
+                data-src="./images/poster-phien-phu-nu.jpg"
+                class="swiper-lazy"
+              />
+              <!-- Preloader image -->
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+              <img
+                data-src="./images/poster_chuyen_doi_so.jpg"
+                class="swiper-lazy"
+              />
+              <!-- Preloader image -->
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+
+            
+
+            <div class="swiper-slide">
+              <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+              <img
+                data-src="./images/poster-nong-nghiep.jpg"
+                class="swiper-lazy"
+              />
+              <!-- Preloader image -->
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+              <img
+                data-src="./images/poster-nang-luong.jpg"
+                class="swiper-lazy"
+              />
+              <!-- Preloader image -->
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+              <img
+                data-src="./images/poster-y-sinh.jpg"
+                class="swiper-lazy"
+              />
+              <!-- Preloader image -->
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+              <img
+                data-src="./images/poster-smart-city.jpg"
+                class="swiper-lazy"
+              />
+              <!-- Preloader image -->
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+              <img
+                data-src="./images/poster-e-learning.jpg"
+                class="swiper-lazy"
+              />
+              <!-- Preloader image -->
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+              <img
+                data-src="./images/poster-e-learning.jpg"
+                class="swiper-lazy"
+              />
+              <!-- Preloader image -->
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
           </div>
-
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
         </div>
-      </div>
     </section>
     <section class="section section-xxl bg-default" id="about">
       <div class="container">
@@ -368,8 +449,8 @@
                   COVID: Hành
                   trang cần có cho sinh viên ”<br /> <a href="./chuyen-minh-sau-covid.html">Chi tiết</a></span></li>
 
-              <li><a href="./chuyen-de-phu-nu.html">PHIÊN 3: GALA Đặc biệt</a><span class="small">“Phụ nữ và Nhịp điệu mới”<br /> <a
-                    href="./chuyen-de-phu-nu.html">Chi tiết</a></span></li>
+              <li><a href="./chuyen-de-phu-nu.html">PHIÊN 3: GALA Đặc biệt</a><span class="small">“Phụ nữ và Nhịp điệu
+                  mới”<br /> <a href="./chuyen-de-phu-nu.html">Chi tiết</a></span></li>
 
               <li><a href="./smart-city">PHIÊN 4: Công nghệ</a><span class="small">“Smart City/ICT: Xu hướng phát triển
                   trong tương
@@ -379,7 +460,8 @@
                   khoá của SMEs trong
                   bình thường mới”<br /> <a href="./chuyen-doi-so.html">Chi tiết</a></span></span> </li>
 
-              <li><a href="./nang-luong.html">PHIÊN 6: Năng lượng mới (*)</a><span class="small">“Hệ thống Năng lượng Mới và Sáng tạo cho mục tiêu Phát
+              <li><a href="./nang-luong.html">PHIÊN 6: Năng lượng mới (*)</a><span class="small">“Hệ thống Năng lượng
+                  Mới và Sáng tạo cho mục tiêu Phát
                   triển Bền vững”<br /> <a href="./nang-luong.html">Chi tiết</a></span></span> </li>
 
 
@@ -431,29 +513,38 @@
             <h2 class="h3">Nhà tài trợ</h2>
           </div>
         </div>
-        
+
         <div class="row">
           <div class="col-lg-9 offset-xl-2">
             <div class="row">
-              <div class="col-lg-4 col-md-12" >
+              <div class="col-lg-4 col-md-12">
                 <p>
-                  <h5 class="h3" style="font-size:16px">Công ty RIKKEISOFT - Nhà Tài Trợ Kim Cương</h5>
+                <h5 class="h3" style="font-size:16px">Công ty RIKKEISOFT - Nhà Tài Trợ Kim Cương</h5>
                 </p>
-                
-                <iframe width="400" height="250" src="https://www.youtube.com/embed/VPfQpCeWuwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe width="400" height="250" src="https://www.youtube.com/embed/VPfQpCeWuwk"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
               <div class="col-lg-4 col-md-12">
                 <p>
-                  <h5 class="h3" style="font-size:16px">Công ty NTQ - Nhà Tài Trợ Kim Cương</h5>
+                <h5 class="h3" style="font-size:16px">Công ty NTQ - Nhà Tài Trợ Kim Cương</h5>
                 </p>
-    
-                <iframe width="400" height="250" src="https://www.youtube.com/embed/wHOkb6UgFTg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe width="400" height="250" src="https://www.youtube.com/embed/wHOkb6UgFTg"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
               <div class="col-lg-4 col-md-12">
                 <p>
-                  <h5 class="h3" style="font-size:16px">Công ty CMC - Nhà Tài Trợ Kim Cương</h5>
+                <h5 class="h3" style="font-size:16px">Công ty CMC - Nhà Tài Trợ Kim Cương</h5>
                 </p>
-                <iframe width="400" height="250" src="https://www.youtube.com/embed/sAmk0VghbeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="400" height="250" src="https://www.youtube.com/embed/sAmk0VghbeE"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
             </div>
           </div>
@@ -573,6 +664,28 @@
       .bottom-icon {
         max-width: 40px;
       }
+      .swiper {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 0px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 60vw;
+        height: auto;
+        max-width: 800px;
+      }
+      @media (max-width: 768px) {
+        .swiper-slide {
+          width: 90vw;
+        }
+      }
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
     </style>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -591,7 +704,7 @@
         // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
         offset: 120, // offset (in px) from the original trigger point
         delay: 0, // values from 0 to 3000, with step 50ms
-        duration: 600, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
         easing: 'ease', // default easing for AOS animations
         once: false, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
@@ -621,6 +734,38 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        lazy: true,
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+      });
     </script>
 </body>
 
