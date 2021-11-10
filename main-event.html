@@ -718,7 +718,7 @@
         $(e).find(".real-time").text(printTime(start) + " - " + printTime(end))
       })
       var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      $(".time-zone").text(timezone + " Time*")
+      $(".time-zone").text("*Thời gian theo múi giờ địa phương")
 
       function updateTimeline() {
         $(".time").each(function(i, e) {
