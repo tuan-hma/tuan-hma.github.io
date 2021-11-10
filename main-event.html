@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
-  <title>Vietnam Summit 2021: Phiên thảo luận - Y SINH</title>
+  <title>Vietnam Summit 2021</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -112,17 +112,19 @@
     </header>
     <div class="fluid-container">
       <div class="row">
+        <img src="./images/Banner466x160.jpeg"/>
+      </div>
+      <div class="row">
         <div class= "col-12">
           <section class="section overflow-hidden" id="schedule">
             <div class="container">
               <div class="bg-img-box section-xl">
-                <div class="bg-img bg-image bg-img-overlay"></div>
+                <div class="bg-img bg-image bg-img-overlay">
+                 
+                </div>
+                
                 <div class="row row-xl-75 mt-0">
-                  <div class="col-xl-8 offset-xl-2">
-                    <h3 class="title">Vietnam Summit in Japan 2021</h3>
-                    <h4 class="subtitle">Diễn đàn trí thức Việt Nam tại Nhật Bản</h4>
-                    <h4 class="intro">Việt Nam Chuyển mình: Giá trị mới - Cách thức mới</h4>
-                  </div>
+                  
                   <!--Tabs #2-->
                   <div class="col-xl-8 offset-xl-2">
                     <!--Bootstrap tabs-->
@@ -137,6 +139,8 @@
                       <!--Tab panes-->
                       <div class="tab-content">
                         <div class="tab-pane fade show active" id="tabs-2-1">
+                          <p class="small time-zone">*Giờ địa phương</p>
+                          <p class="small">*Link tham gia sẽ được mở 20 phút trước giờ bắt đầu</p>
                           <div class="tab-pane-item">
                             <div class="time" data-start="2021-11-20T10:00:00.000+09:00" data-end="2021-11-20T10:30:00.000+09:00">
                               <div class="real-time">10:00 – 10:30</div>
@@ -232,7 +236,7 @@
                           </div>
 
                           <div class="tab-pane-item">
-                            <div class="time" data-start="2021-11-20T18:00:00.000+09:00" data-end="2021-11-20T20:00:00.000+09:00">
+                            <div class="time" data-start="2021-11-20T18:00:00.000+09:00" data-end="2021-11-20T20:30:00.000+09:00">
                               <div class="real-time">10:00 – 10:30</div>
                               <a class="join-link end" href="#">
                                 <span class="live-flag">Live!</span> 
@@ -249,17 +253,17 @@
                               <div class="h4 event-title">GALA Đặc biệt </div>
                               <div class="h6 event-author font-weight-normal mt-2">
                                 Phụ nữ và Nhịp điệu mới
-                                <br /> <a style="text-decoration: underline;" href="./session">Chi tiết</a>
+                                <br /> <a style="text-decoration: underline;" href="./chuyen-de-phu-nu.html">Chi tiết</a>
                                 <img class="banner" src="/images/poster-phien-phu-nu.jpg" />
                                 <!-- <a class="text-underline"
                                   href="#sessions">Thông tin chi tiết</a></div> -->
                               </div>
                             </div>
                           </div>
-                          <p class="small time-zone">*Giờ địa phương</p>
-                          <p class="small">*Link tham gia sẽ được mở 20 phút trước giờ bắt đầu</p>
                         </div>
                         <div class="tab-pane fade" id="tabs-2-2">
+                          <p class="small time-zone">*Giờ địa phương</p>
+                          <p class="small">*Link tham gia sẽ được mở 20 phút trước giờ bắt đầu</p>
                           <div class="tab-pane-item">
                             <div class="time" data-start="2021-11-21T09:00:00.000+09:00" data-end="2021-11-21T10:30:00.000+09:00">
                               <div class="real-time">10:00 – 10:30</div>
@@ -402,8 +406,6 @@
                               </div>
                             </div>
                           </div>
-                          <p class="small time-zone">*Giờ địa phương</p>
-                          <p class="small">*Link tham gia sẽ được mở 20 phút trước giờ bắt đầu</p>
                         </div>
                       </div>
                     </div>
@@ -721,12 +723,13 @@
       function updateTimeline() {
         $(".time").each(function(i, e) {
           var start = new Date($(e).data("start"))
+          var openTime = new Date(start.getTime() - 1000 * 60 *20)
           var end = new Date($(e).data("end"))
           $(e).find(".join-link").removeClass("live")
           $(e).find(".join-link").removeClass("end")
           $(e).find(".join-link").removeClass("future")
           var currentTime = new Date()
-          if (currentTime < start) {
+          if (currentTime < openTime) {
             $(e).find(".join-link").addClass("future")
           } else {
             if (currentTime < end) {
