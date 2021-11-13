@@ -3549,7 +3549,7 @@ p + .price {
 		transform: translateX(0);
 	}
 	.quote-body {
-		margin-top: 70px;
+		margin-top: 30px;
 	}
 }
 
@@ -8915,7 +8915,7 @@ footer .brand img{
 .btn-regist {
   position: fixed;
   left: 15px;
-  bottom: 15px;
+  bottom: 80px;
   background: #f24738;
   color: #fff;
   border: none;
@@ -8926,8 +8926,35 @@ footer .brand img{
   z-index: 99;
 }
 
+.btn-countdown {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  background: #f24738;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0.1rem 1rem rgb(147 0 0 / 45%) !important;
+  z-index: 99;
+  margin-right: 15px;
+}
+
+.btn-countdown span {
+  font-weight: 800;
+  text-decoration: underline;
+}
+
 @media (min-width: 786px) {
   .btn-regist {
+		left: 40px;
+    bottom: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 14pt;
+    padding-top: 15px;
+    padding-bottom: 15px;
+	}
+  .btn-countdown {
 		left: 40px;
     bottom: 40px;
     padding-left: 40px;
@@ -8985,4 +9012,196 @@ footer .brand img{
  8.92857% { transform:translate(5px,0) }
  10.71429% { transform:translate(0,0) }
  100% { transform:translate(0,0) }
+}
+
+#our-partners .title {
+  font-size: 14pt;
+}
+
+#our-partners .sub-title {
+  font-size: 10pt;
+}
+
+#our-partners .icon {
+  border-radius: 100%;
+  margin-right: 20px;
+  margin-left: 20px;
+  max-height: 80px;
+}
+
+.flex {
+  display: flex;
+}
+
+.quote-text {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+
+.quote-text span {
+  display: block;
+  text-decoration: underline;
+}
+
+.flex-son {
+  line-height: 1.1;
+}
+
+.flex.reverse {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.cardTop {
+  width: 497px;
+  height: 284px;
+  background: #FAC24F;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-end;
+}
+
+.timeline {
+  mix-blend-mode: normal;
+  border-radius: 10px;
+}
+.timeline h3 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin-left: 66px;
+  margin-top: 40px;
+}
+.timeline label {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+  margin-left: 66px;
+  margin-top: 10px;
+  color: #FFFFFF;
+}
+.timeline .box {
+  width: 100%;
+  margin-top: 99.5px;
+}
+.timeline .box .container {
+  width: 100%;
+  display: flex;
+}
+.timeline .box .container .lines {
+  margin-left: 40px;
+  margin-top: 6px;
+}
+.timeline .box .container .lines .dot {
+  width: 14px;
+  height: 14px;
+  background: #D1D6E6;
+  border-radius: 7px;
+}
+.timeline .box .container .lines .line {
+  height: 170px;
+  width: 2px;
+  background: #D1D6E6;
+  margin-left: 5.3px;
+}
+
+@media (min-width: 576px) {
+  .timeline .box .container .lines .line {
+    height: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline .box .container .lines .line {
+    height: 120px;
+  }
+}
+
+
+
+
+.timeline .box .container .cards {
+  margin-left: 12px;
+  transform: translateY(-50px);
+}
+.timeline .box .container .cards .card {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 2px 0 #eeeeee40;
+  border-radius: 10px;
+  box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.0944602);
+  margin-bottom: 10px;
+  padding-right: 25px;
+}
+.timeline .box .container .cards .card.mid {
+  /* height: 71px; */
+}
+.timeline .box .container .cards .card h4 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  margin-left: 25px;
+  margin-bottom: 5px;
+  color: #2B2862;
+}
+.timeline .box .container .cards .card p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #2B2862;
+  margin-left: 25px;
+}
+.timeline .box .bottom {
+  width: 100%;
+  /* height: 107px; */
+  background: #fff;
+  box-shadow: 0 0 2px #eeeeee50;
+  padding-top: 45px;
+}
+.timeline .box .bottom .btn {
+  width: 249px;
+  height: 62px;
+  background: #FFFFFF40;
+  mix-blend-mode: normal;
+  cursor: pointer;
+  border: 1px solid #8260D780;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #2B2862;
+  margin-left: 53px;
+  transition: 0.3s;
+  background: #2B2862;
+  color: #fff;
+  border-color: #2B2862;
+}
+.timeline .box .bottom .btn:hover {
+  transform: scale(1.03);
+}
+
+.timeline .card .dot {
+  width: 14px;
+  height: 14px;
+  background: #D1D6E6;
+  border-radius: 7px;
+  left: -18px;
 }

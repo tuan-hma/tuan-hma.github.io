@@ -866,6 +866,43 @@
 			}
 		}
 
+    // show countdown 
+    $(".btn-regist").after('<a href="https://forms.gle/jsMJayXWcCvV5rW26" target="_blank" class="btn btn-countdown">Sự kiện sẽ bắt đầu sau: <span>7 ngày 20 giờ 20 phút</span></a>')
+
+    String.prototype.lpad = function(padString, length) {
+          var str = this;
+          while (str.length < length)
+              str = padString + str;
+          return str;
+      }
+      function getDiffDay(date1, date2) {
+        var Difference_In_Time = date2.getTime() - date1.getTime();
+        var Difference_In_Days = Math.floor(Difference_In_Time / (1000 * 3600 * 24));
+        var timeleft = Difference_In_Time % (1000 * 3600 * 24);
+        var diffHour =   Math.floor(timeleft / (1000 * 3600));
+        timeleft = timeleft % (1000 * 3600);
+        var diffMinute =  Math.floor(timeleft / (1000 * 60))
+        timeleft = timeleft % (1000 * 60)
+        return Difference_In_Days + " ngày " + diffHour.toString().lpad("0",2) + " giờ " + diffMinute.toString().lpad("0",2) + " phút " +  Math.floor((timeleft/1000)).toString().lpad("0",2) + " giây "
+      }
+      var eventStart = new Date("2021-11-20T10:00:00.000+09:00")
+      var eventEnd = new Date("2021-11-21T19:00:00.000+09:00")
+      function updateTimeline() {
+        if (new Date() < eventStart) {
+          $(".btn-countdown span").text(getDiffDay(new Date(), eventStart))
+        } else if (new Date() > eventStart && new Date() < eventEnd) {
+          $(".btn-countdown").text("Sự kiện đang diễn ra")
+        } else {
+          $(".btn-countdown").text("Sự kiện đã kết thúc")
+          $(".btn-regist").hide()
+        }
+        
+      }
+      updateTimeline();
+      var intervalId = window.setInterval(function(){
+        /// call your function here
+        updateTimeline();
+      }, 1000);
 
 	});
 }());
