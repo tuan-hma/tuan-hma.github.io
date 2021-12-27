@@ -893,7 +893,7 @@
         } else if (new Date() > eventStart && new Date() < eventEnd) {
           $(".btn-countdown").text("Sự kiện đang diễn ra")
         } else {
-          $(".btn-countdown").text("Sự kiện đã kết thúc")
+          $(".btn-countdown").html("Sự kiện đã kết thúc, xem lại <a style='color: white; text-decoration: underline' href='/index.html#sessions'>tại đây</a>")
           $(".btn-regist").hide()
         }
         

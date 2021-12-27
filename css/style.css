@@ -8926,7 +8926,7 @@ footer .brand img{
   z-index: 99;
 }
 
-.btn-countdown {
+.btn-countdown, .btn-countdown:hover {
   position: fixed;
   left: 15px;
   bottom: 15px;
