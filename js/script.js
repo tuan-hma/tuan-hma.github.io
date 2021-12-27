@@ -867,7 +867,7 @@
 		}
 
     // show countdown 
-    $(".btn-regist").after('<a href="https://forms.gle/jsMJayXWcCvV5rW26" target="_blank" class="btn btn-countdown">Sự kiện sẽ bắt đầu sau: <span>7 ngày 20 giờ 20 phút</span></a>')
+    $(".btn-regist").after('<a href="/index.html#sessions" target="_blank" class="btn btn-countdown">Sự kiện sẽ bắt đầu sau: <span>7 ngày 20 giờ 20 phút</span></a>')
 
     String.prototype.lpad = function(padString, length) {
           var str = this;
@@ -893,7 +893,7 @@
         } else if (new Date() > eventStart && new Date() < eventEnd) {
           $(".btn-countdown").text("Sự kiện đang diễn ra")
         } else {
-          $(".btn-countdown").html("Sự kiện đã kết thúc, xem lại <a style='color: white; text-decoration: underline' href='/index.html#sessions'>tại đây</a>")
+          $(".btn-countdown").html("Sự kiện đã kết thúc, xem lại <span style='text-decoration: underline'>tại đây</span>")
           $(".btn-regist").hide()
         }
         
